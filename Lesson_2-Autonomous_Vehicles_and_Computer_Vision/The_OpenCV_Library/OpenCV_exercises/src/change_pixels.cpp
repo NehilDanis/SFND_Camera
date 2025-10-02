@@ -13,9 +13,12 @@ void changePixels()
     m1_8u.create(nrows, ncols, CV_8UC1); // two-channel matrix with 8bit unsigned elements
     m1_8u.setTo(cv::Scalar(0));          //black
 
-    for (int r = 230; r < 250; r++)
+    for (size_t r = 230; r < 250; r++)
     {
         // STUDENT TASK : loop over all columns and set matrix elements to 255
+        for(size_t c = 0; c < ncols ; c++) {
+            m1_8u.at<uint8_t>(r, c) = 255;
+        }
 
     }
 
