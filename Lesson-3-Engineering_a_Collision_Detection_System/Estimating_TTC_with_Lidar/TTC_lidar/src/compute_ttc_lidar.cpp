@@ -19,11 +19,17 @@ void computeTTCLidar(std::vector<LidarPoint> &lidarPointsPrev,
     double minXPrev = 1e9, minXCurr = 1e9;
     for (auto it = lidarPointsPrev.begin(); it != lidarPointsPrev.end(); ++it)
     {
+        if(std::abs(it->y) > laneWidth / 2.0f) {
+            continue;
+        }
         minXPrev = minXPrev > it->x ? it->x : minXPrev;
     }
 
     for (auto it = lidarPointsCurr.begin(); it != lidarPointsCurr.end(); ++it)
     {
+        if(std::abs(it->y) > laneWidth / 2.0f) {
+            continue;
+        }
         minXCurr = minXCurr > it->x ? it->x : minXCurr;
     }
 
@@ -35,8 +41,8 @@ int main()
 {
 
     std::vector<LidarPoint> currLidarPts, prevLidarPts;
-    readLidarPts("../dat/C22A5_currLidarPts.dat", currLidarPts);
-    readLidarPts("../dat/C22A5_prevLidarPts.dat", prevLidarPts);
+    readLidarPts("/Users/nehildanis/Projects/sensorFusion/SFND_Camera/Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Lidar/TTC_lidar/dat/C22A5_currLidarPts.dat", currLidarPts);
+    readLidarPts("/Users/nehildanis/Projects/sensorFusion/SFND_Camera/Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Lidar/TTC_lidar/dat/C22A5_prevLidarPts.dat", prevLidarPts);
 
 
     double ttc;

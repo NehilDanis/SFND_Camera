@@ -70,12 +70,12 @@ int main()
     // so that you can focus on TTC computation based on a defined set of keypoints and matches. 
     // The task you need to solve in this example does not require you to look into the data structures.  
     vector<cv::KeyPoint> kptsSource, kptsRef;
-    readKeypoints("../dat/C23A5_KptsSource_AKAZE.dat", kptsSource); // readKeypoints("./dat/C23A5_KptsSource_SHI-BRISK.dat"
-    readKeypoints("../dat/C23A5_KptsRef_AKAZE.dat", kptsRef); // readKeypoints("./dat/C23A5_KptsRef_SHI-BRISK.dat"
+    readKeypoints("/Users/nehildanis/Projects/sensorFusion/SFND_Camera/Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Camera/TTC_camera/dat/C23A5_KptsSource_AKAZE.dat", kptsSource); // readKeypoints("./dat/C23A5_KptsSource_SHI-BRISK.dat"
+    readKeypoints("/Users/nehildanis/Projects/sensorFusion/SFND_Camera/Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Camera/TTC_camera/dat/C23A5_KptsRef_AKAZE.dat", kptsRef); // readKeypoints("./dat/C23A5_KptsRef_SHI-BRISK.dat"
 
     // step 2: read pre-recorded keypoint matches from file
     vector<cv::DMatch> matches;
-    readKptMatches("../dat/C23A5_KptMatches_AKAZE.dat", matches); // readKptMatches("./dat/C23A5_KptMatches_SHI-BRISK.dat", matches);
+    readKptMatches("/Users/nehildanis/Projects/sensorFusion/SFND_Camera/Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Camera/TTC_camera/dat/C23A5_KptMatches_AKAZE.dat", matches); // readKptMatches("./dat/C23A5_KptMatches_SHI-BRISK.dat", matches);
     
     // step 3: compute the time-to-collision based on the pre-recorded data
     double ttc; 

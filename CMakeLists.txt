@@ -12,3 +12,5 @@ project(camera_fusion)
 find_package(OpenCV 4.11 REQUIRED)
 
 add_subdirectory(Lesson_2-Autonomous_Vehicles_and_Computer_Vision/The_OpenCV_Library/OpenCV_exercises)
+add_subdirectory(Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Lidar/TTC_lidar)
+add_subdirectory(Lesson-3-Engineering_a_Collision_Detection_System/Estimating_TTC_with_Camera/TTC_camera)
